@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Three.js Interactive Glowing Galaxy - Telegram Mini App</title>
+  <title>App</title>
   <style>
     html, body {
       margin: 0;
@@ -52,17 +52,10 @@
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
     // Telegram Mini App Initialization
-    if (window.Telegram && Telegram.WebApp) {
-      Telegram.WebApp.ready();
-      Telegram.WebApp.expand();
-      // Try fullscreen
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen().catch(console.warn);
-      }
-      // Main button to close
-      const mainBtn = document.getElementById('main-button');
-      mainBtn.addEventListener('click', () => Telegram.WebApp.close());
-      Telegram.WebApp.MainButton.hide();
+    if (Telegram.WebApp.requestFullscreen) {
+      Telegram.WebApp.requestFullscreen();                         // :contentReference[oaicite:3]{index=3}
+    } else if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen().catch(console.warn);
     }
 
     // Three.js scene setup
