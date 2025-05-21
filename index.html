@@ -20,8 +20,8 @@
     /* Stylish overlay clock */
     #clock {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 75px;
+      right: 130px;
       padding: 8px 12px;
       background: rgba(0, 0, 0, 0.11);
       color: #ffffff85;
@@ -59,12 +59,7 @@
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().catch(console.warn);
       }
-      // Main button to close
-      const mainBtn = document.getElementById('main-button');
-      mainBtn.addEventListener('click', () => Telegram.WebApp.close());
-      Telegram.WebApp.MainButton.hide();
     }
-
     // Three.js scene setup
     let scene, camera, renderer, controls;
     let galaxyMesh, starPoints;
